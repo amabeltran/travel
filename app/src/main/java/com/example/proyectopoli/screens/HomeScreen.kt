@@ -27,6 +27,8 @@ import androidx.compose.ui.Modifier
 import com.example.proyectopoli.navigation.ContentNavigation
 import com.example.proyectopoli.screens.fragments.content.menu.MenuFragment
 import kotlinx.coroutines.launch
+import androidx.compose.ui.platform.LocalContext
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,6 +36,13 @@ fun HomeScreen() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedOption by remember { mutableStateOf("perfil") }
+
+    // Datos de ejemplo del usuario
+    val userName = "Juan Pérez"
+    val userEmail = "juanperez@email.com"
+
+    // Obtener el contexto
+    val context = LocalContext.current
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -84,8 +93,19 @@ fun HomeScreen() {
                     .padding(paddingValues),
                 color = MaterialTheme.colorScheme.background
             ) {
-                ContentNavigation(selectedOption = selectedOption)
+                // Pasamos el contexto correctamente a ContentNavigation
+                ContentNavigation(
+                    selectedOption = selectedOption,
+                    userName = userName,
+                    userEmail = userEmail,
+                    context = context
+                )
             }
         }
     }
 }
+
+
+
+
+
