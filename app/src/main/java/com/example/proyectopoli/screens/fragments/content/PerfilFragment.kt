@@ -25,10 +25,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+<<<<<<< Updated upstream
 import coil.compose.rememberAsyncImagePainter
 import com.example.proyectopoli.R
 import kotlinx.coroutines.launch
 
+=======
+//hola cambioar perfil
+>>>>>>> Stashed changes
 @Composable
 fun PerfilFragment(context: Context) {
     val sharedPreferences = context.getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
