@@ -68,7 +68,7 @@ fun PerfilFragment(context: Context) {
             contentScale = ContentScale.Crop
         )
 //
-        // **Hacer scroll con LazyColumn**
+        // **Hacer scroll
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(16.dp),
