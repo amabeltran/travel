@@ -13,7 +13,7 @@ fun ContentNavigation(selectedOption: String, userName: String, userEmail: Strin
     when (selectedOption) {
         "perfil" -> PerfilFragment(context = context) // ✅ Pasamos el contexto
         "fotos" -> FotosFragment()
-        "videos" -> VideosFragment()
+        "videos" -> VideosFragment(context = context)
         "web" -> WebFragment()
         "botones" -> BotonesFragment()
 
