@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.navigation.compose)
     implementation(libs.material.icons.extended)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -68,4 +70,12 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
     implementation("io.coil-kt:coil-compose:2.4.0")
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation ("androidx.webkit:webkit:1.8.0")
+    implementation ("androidx.compose.ui:ui-viewbinding:1.6.0")
+    implementation ("androidx.compose.ui:ui-viewbinding:1.6.0")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.0")
+
 }

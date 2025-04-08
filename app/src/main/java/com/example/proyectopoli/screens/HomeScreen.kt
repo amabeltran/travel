@@ -28,15 +28,15 @@ import com.example.proyectopoli.navigation.ContentNavigation
 import com.example.proyectopoli.screens.fragments.content.menu.MenuFragment
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 
-
+@Preview(showBackground = true, name = "Vista Previa")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedOption by remember { mutableStateOf("perfil") }
-
     // Datos de ejemplo del usuario
     val userName = "Juan Pérez"
     val userEmail = "juanperez@email.com"

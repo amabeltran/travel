@@ -33,14 +33,15 @@ fun MenuFragment(
         MenuItem(id = "fotos", title = "Fotos", icon = Icons.Default.Image),
         MenuItem(id = "videos", title = "Videos", icon = Icons.Default.Videocam),
         MenuItem(id = "web", title = "Web", icon = Icons.Default.Language),
-        MenuItem(id = "botones", title = "Botones", icon = Icons.Default.RadioButtonChecked)
+        MenuItem(id = "botones", title = "Botones", icon = Icons.Default.RadioButtonChecked),
+
     )
 
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "ProyectoPOLI",
+            text = "Time to travel",
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
