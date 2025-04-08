@@ -35,7 +35,7 @@ import androidx.compose.ui.platform.LocalContext
 fun HomeScreen() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    var selectedOption by remember { mutableStateOf("perfil") }
+    var selectedOption by remember { mutableStateOf("perfil_prueba") }
 
     // Datos de ejemplo del usuario
     val userName = "Juan Pérez"
