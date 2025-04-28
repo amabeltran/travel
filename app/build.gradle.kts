@@ -62,6 +62,9 @@ dependencies {
     implementation(libs.material.icons.extended)
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.storage)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.foundation.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -77,5 +80,6 @@ dependencies {
     implementation ("androidx.compose.ui:ui-viewbinding:1.6.0")
     implementation ("androidx.compose.ui:ui-viewbinding:1.6.0")
     implementation("androidx.compose.ui:ui-text-google-fonts:1.6.0")
+    implementation ("androidx.compose.material:material-icons-extended:1.5.4")
 
 }
