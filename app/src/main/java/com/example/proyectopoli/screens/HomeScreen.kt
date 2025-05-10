@@ -2,6 +2,7 @@ package com.example.proyectopoli.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerValue
@@ -28,15 +29,18 @@ import com.example.proyectopoli.navigation.ContentNavigation
 import com.example.proyectopoli.screens.fragments.content.menu.MenuFragment
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.PermanentNavigationDrawer
+import androidx.compose.material3.PermanentDrawerSheet
+import androidx.compose.ui.unit.dp
 
-
+@Preview(showBackground = true, name = "Vista Previa")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var selectedOption by remember { mutableStateOf("perfil") }
-
     // Datos de ejemplo del usuario
     val userName = "Juan Pérez"
     val userEmail = "juanperez@email.com"
@@ -44,17 +48,13 @@ fun HomeScreen() {
     // Obtener el contexto
     val context = LocalContext.current
 
-    ModalNavigationDrawer(
-        drawerState = drawerState,
+    PermanentNavigationDrawer(
         drawerContent = {
-            ModalDrawerSheet {
+            PermanentDrawerSheet(modifier = Modifier.width(100.dp)) {
                 MenuFragment(
                     selectedOption = selectedOption,
                     onOptionSelected = { option ->
                         selectedOption = option
-                        scope.launch {
-                            drawerState.close()
-                        }
                     }
                 )
             }
@@ -63,23 +63,8 @@ fun HomeScreen() {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    title = { Text("ProyectoPOLI") },
-                    navigationIcon = {
-                        IconButton(onClick = {
-                            scope.launch {
-                                if (drawerState.isClosed) {
-                                    drawerState.open()
-                                } else {
-                                    drawerState.close()
-                                }
-                            }
-                        }) {
-                            Icon(
-                                imageVector = Icons.Default.Menu,
-                                contentDescription = "Menu"
-                            )
-                        }
-                    },
+                    title = { Text("") },
+                    // Ya no necesitas el botón de abrir/cerrar menú
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = MaterialTheme.colorScheme.primaryContainer,
                         titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
@@ -93,7 +78,6 @@ fun HomeScreen() {
                     .padding(paddingValues),
                 color = MaterialTheme.colorScheme.background
             ) {
-                // Pasamos el contexto correctamente a ContentNavigation
                 ContentNavigation(
                     selectedOption = selectedOption,
                     userName = userName,
@@ -104,6 +88,7 @@ fun HomeScreen() {
         }
     }
 }
+
 
 
 
